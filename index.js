@@ -4,9 +4,33 @@ function App(){
     const [randomQuote,setRandomQuote] = React.useState([]);
     const [randomColor,setRandomColor] = React.useState("#dddec3");
     React.useEffect(() => {
-       async function fetchData(){
-           const response = await fetch("https://type.fit/api/quotes")
-           const data = await response.json();
+        function fetchData(){
+            const data = [{
+                    text:"ไม่มีก็แค่สร้าง  ไม่ใช่อ้างว่าบ้านจน",
+                    author: "หลานย่าโม"
+                },{
+                    text:"ไม่เคยลำบากอย่าปากดี",
+                    author: "เอ็ม ออนิวรังสิต"
+                },{
+                    text:"เบื่อแล้วรถเเรง อยากขับรถซื้อแกงบ้างอ่ะ",
+                    author: "แพนด้าซิ่ง วิ่งส่งแกง"
+                },{
+                    text:"จะดูถูก ก็ไม่ว่า แต่อย่าเบิ้ลใส่หน้า ผมไม่ชอบ",
+                    author: "แพนด้าซิ่ง วิ่งส่งแกง"
+                },{
+                    text:"ชอบซิ่ง ไม่ชอบสองใจ สายเปย์หลบไป สายหมอบจะเดิน",
+                    author:"สายหมอบ"
+                },{
+                    text:"จ่าโบก โผมบิด จ่าสะกิดโผมสับโดด",
+                    author:"สับเด้ง"
+                },{
+                    text:"ได้ข่าวว่าจัดจ้าน มาย่านพี่สิเดี่ยวจัดให้",
+                    author:"สับเด้ง"
+                },{
+                    text:"รักมันทำร้ายเลยย้ายมาทำรถ รักมันรันทดเลยทำรถประชดรัก",
+                    author:"สายหมอบ"
+                },
+            ];
            
            setQuotes(data);
            let randomIndex = Math.floor(Math.random() * data.length);
